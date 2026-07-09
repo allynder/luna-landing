@@ -17,8 +17,8 @@
         <span class="logo-text">Luna</span>
       </div>
       <div class="nav-links">
-        <a href="#capabilities">What she does</a>
-        <a href="#how-it-works">How it works</a>
+        <a href="#vs">Why Luna</a>
+        <a href="#roles">Use cases</a>
         <a href="#pricing">Pricing</a>
       </div>
       <a href="#deploy" class="btn btn-small btn-primary">Add to Slack</a>
@@ -29,29 +29,27 @@
     <div class="hero-inner">
       <div class="hero-badge">
         <span class="dot"></span>
-        Now in public beta — 200+ teams onboarded
+        Now in public beta
       </div>
       <h1 class="hero-title">
-        Not another dashboard.<br>
-        <span class="gradient">A teammate.</span>
+        Your Product Owner<br>
+        who <span class="gradient">never sleeps</span>
       </h1>
       <p class="hero-subtitle">
-        Luna lives in Slack, reads Linear, and watches GitHub. Every morning she tells you 
-        what's blocked, what's ready, and what your team should tackle first. Then she writes the brief.
+        Luna lives in Slack, reads Linear, and watches GitHub. She grooms your backlog daily,
+        flags blockers before they spiral, and writes sprint briefs your stakeholders actually read.
       </p>
       <div class="hero-ctas">
-        <a href="#deploy" class="btn btn-primary btn-large">Add Luna to Slack →</a>
-        <a href="#demo" class="btn btn-secondary btn-large">See her run a standup</a>
+        <a href="#deploy" class="btn btn-primary btn-large">Add Luna to Slack — Free</a>
+        <a href="#demo" class="btn btn-secondary btn-large">See a standup report</a>
       </div>
       <div class="hero-trust">
-        <div class="trust-avatars">
-          <div class="avatar">DM</div>
-          <div class="avatar">SH</div>
-          <div class="avatar">DN</div>
-          <div class="avatar">FM</div>
-          <div class="avatar-more">+12</div>
+        <div class="trust-badges">
+          <span class="trust-badge">✓ $0 to start</span>
+          <span class="trust-badge">✓ No credit card</span>
+          <span class="trust-badge">✓ 14-day trial</span>
         </div>
-        <p>Used by teams at HyperCLI, Engage The Crowd, and product-led startups</p>
+        <p class="trust-text">Trusted by product teams at HyperCLI, Engage The Crowd, and 200+ startups</p>
       </div>
     </div>
   </section>
@@ -59,170 +57,104 @@
   <section class="demo" id="demo">
     <div class="demo-inner">
       <div class="demo-header">
-        <span class="demo-label">THIS IS WHAT SHE SENDS EVERY MORNING</span>
-        <h2>She talks like a PM. Because she <em>is</em> one.</h2>
+        <span class="demo-label">LIVE IN YOUR SLACK EVERY MORNING</span>
+        <h2>This is what your team wakes up to</h2>
       </div>
-      <div class="chat-demo">
-        <div class="chat-message human">
-          <div class="chat-avatar">K</div>
-          <div class="chat-bubble">
-            <p>What's blocked this sprint?</p>
-          </div>
+      <div class="slack-mockup">
+        <div class="slack-header">
+          <div class="slack-channel">#product-updates</div>
+          <div class="slack-time">9:00 AM</div>
         </div>
-        <div class="chat-message agent">
-          <div class="chat-avatar">🌙</div>
-          <div class="chat-bubble">
-            <p><strong>3 blockers need your attention:</strong></p>
-            <div class="blocker-list">
-              <div class="blocker-item">
-                <span class="blocker-tag urgent">URGENT</span>
-                <span class="blocker-title">HYP-142 — Auth redirect loop on iOS</span>
-                <span class="blocker-meta">4 days stale · @dmitry · no update since Tuesday</span>
+        <div class="slack-message">
+          <div class="slack-avatar">🌙</div>
+          <div class="slack-content">
+            <div class="slack-name">Luna <span class="slack-bot">APP</span></div>
+            <div class="slack-text">
+              <p><strong>Good morning, team.</strong> Here's your daily brief:</p>
+              <div class="brief-section">
+                <div class="brief-title">🚨 3 Blockers</div>
+                <div class="brief-item">
+                  <span class="brief-tag urgent">URGENT</span>
+                  HYP-142 — Auth redirect on iOS (4 days stale, @dmitry)
+                </div>
+                <div class="brief-item">
+                  <span class="brief-tag waiting">WAITING</span>
+                  HYP-156 — Design review pending (@francisco)
+                </div>
+                <div class="brief-item">
+                  <span class="brief-tag risk">AT RISK</span>
+                  HYP-161 — Scope grew 40%, needs escalation
+                </div>
               </div>
-              <div class="blocker-item">
-                <span class="blocker-tag waiting">WAITING</span>
-                <span class="blocker-title">HYP-156 — Design system migration</span>
-                <span class="blocker-meta">Design review pending · @francisco · blocked by external agency</span>
+              <div class="brief-section">
+                <div class="brief-title">✅ Ready for Sprint</div>
+                <div class="brief-item">8 tickets groomed and RICE-scored</div>
               </div>
-              <div class="blocker-item">
-                <span class="blocker-tag risk">AT RISK</span>
-                <span class="blocker-title">HYP-161 — API rate limit overhaul</span>
-                <span class="blocker-meta">Scope grew 40% · needs escalation to CTO</span>
+              <div class="brief-section">
+                <div class="brief-title">📊 Sprint Health</div>
+                <div class="brief-item">Velocity: +12% vs last sprint | Scope: On track | Risk: Low</div>
               </div>
+              <p class="brief-action">Reply <code>@luna details</code> for full breakdown or <code>@luna escalate 161</code> to draft escalation.</p>
             </div>
-            <p class="chat-action">Want me to draft the escalation or suggest scope cuts for HYP-161?</p>
-          </div>
-        </div>
-        <div class="chat-message human">
-          <div class="chat-avatar">K</div>
-          <div class="chat-bubble">
-            <p>Groom the backlog</p>
-          </div>
-        </div>
-        <div class="chat-message agent">
-          <div class="chat-avatar">🌙</div>
-          <div class="chat-bubble">
-            <p><strong>Done.</strong> Here's what I found:</p>
-            <div class="groom-stats">
-              <div class="groom-stat">
-                <span class="stat-num">8</span>
-                <span class="stat-label">Missing acceptance criteria</span>
-              </div>
-              <div class="groom-stat">
-                <span class="stat-num">3</span>
-                <span class="stat-label">Stale &gt;14 days</span>
-              </div>
-              <div class="groom-stat">
-                <span class="stat-num">1</span>
-                <span class="stat-label">Duplicate detected</span>
-              </div>
-            </div>
-            <p class="chat-action">I RICE-scored the top 10 and moved 3 to "Ready for Sprint." <a href="#">View prioritized list →</a></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="capabilities" id="capabilities">
-    <div class="capabilities-inner">
+  <section class="vs" id="vs">
+    <div class="vs-inner">
       <div class="section-header">
-        <span class="section-label">WHAT SHE DOES</span>
-        <h2>The PM work that actually gets done</h2>
-        <p>Not a chatbot that answers questions. An agent that runs your product ops.</p>
+        <span class="section-label">WHY LUNA</span>
+        <h2>You've tried the tools. The PM work is still there.</h2>
       </div>
-      <div class="capabilities-grid">
-        <div class="capability">
-          <div class="capability-icon">📊</div>
-          <h3>Know what's broken before standup starts</h3>
-          <p>Every morning, Luna reads Linear and GitHub overnight. She surfaces the 3 things that need discussion, the 2 that don't, and the 1 that needs escalation. Your standup ends in 8 minutes. Your team actually knows what's happening.</p>
+      <div class="vs-table">
+        <div class="vs-row vs-header">
+          <div class="vs-task">The work</div>
+          <div class="vs-tool">What you do now</div>
+          <div class="vs-luna">What Luna does</div>
         </div>
-        <div class="capability">
-          <div class="capability-icon">🎯</div>
-          <h3>A backlog that doesn't lie</h3>
-          <p>Luna grooms daily. Missing acceptance criteria? Flagged. Stale for 2 weeks? Moved or killed. Duplicates? Merged. She RICE-scores everything and tells you what's actually ready for sprint. Your engineers stop picking up tickets that aren't tickets.</p>
+        <div class="vs-row">
+          <div class="vs-task">Standup prep</div>
+          <div class="vs-tool">You open Linear, scan tickets, check Slack, write notes. 30 minutes.</div>
+          <div class="vs-luna">She reads everything overnight and posts the brief by 9am. You just read it.</div>
         </div>
-        <div class="capability">
-          <div class="capability-icon">📄</div>
-          <h3>Stakeholders who finally read updates</h3>
-          <p>Luna auto-generates briefs with velocity trends, scope creep alerts, and a risk register written in English — not Jira-ese. Delivered as PDFs that look like you spent 3 hours on them. Because she did.</p>
+        <div class="vs-row">
+          <div class="vs-task">Backlog grooming</div>
+          <div class="vs-tool">You RICE-score manually, hunt for missing ACs, find duplicates. 2 hours.</div>
+          <div class="vs-luna">She scores, flags, and moves tickets daily. You review her suggestions in 10 minutes.</div>
         </div>
-        <div class="capability">
-          <div class="capability-icon">🔗</div>
-          <h3>No more "I thought that shipped"</h3>
-          <p>Luna links every PR to its ticket, checks CI status, and flags "merged but failing" before it hits staging. She knows what's deployed, what's broken, and who's fixing it. So you don't have to ask in Slack.</p>
+        <div class="vs-row">
+          <div class="vs-task">Sprint briefs</div>
+          <div class="vs-tool">You copy-paste from Jira, format in Google Docs, chase stakeholders. 3 hours.</div>
+          <div class="vs-luna">She auto-generates PDFs with velocity, risks, and narrative. Stakeholders actually read them.</div>
         </div>
-        <div class="capability">
-          <div class="capability-icon">🚨</div>
-          <h3>Blockers that die in 4 hours, not 4 days</h3>
-          <p>Luna detects stalled work before it becomes a problem. She nudges assignees, suggests reassignments, and drafts escalation messages — all before your next standup. Blockers don't age. They get solved.</p>
-        </div>
-        <div class="capability">
-          <div class="capability-icon">🔮</div>
-          <h3>Know what they're building before they announce it</h3>
-          <p>Luna monitors competitor moves, drafts battlecards, and alerts you to narrative shifts. Your next roadmap meeting starts with "Here's what they're doing" instead of "I think I saw something..."</p>
+        <div class="vs-row">
+          <div class="vs-task">Blocker escalation</div>
+          <div class="vs-tool">You notice a ticket is stalled, chase the owner, draft a message. 1 hour.</div>
+          <div class="vs-luna">She detects stalled work in 4 hours, nudges the owner, drafts the escalation. You just approve.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="how-it-works" id="how-it-works">
-    <div class="how-inner">
+  <section class="testimonials">
+    <div class="testimonials-inner">
       <div class="section-header">
-        <span class="section-label">HOW IT WORKS</span>
-        <h2>From zero to standup in 3 steps</h2>
+        <span class="section-label">WHAT TEAMS SAY</span>
+        <h2>Product teams that actually ship</h2>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Add her to Slack</h3>
-          <p>One-click install from the Slack App Directory. Takes 60 seconds. No engineering required.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Connect your tools</h3>
-          <p>OAuth with Linear, GitHub, and whatever else you use. 5 minutes. She starts reading immediately.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>She runs product ops</h3>
-          <p>Daily standups. Weekly briefs. Continuous grooming. Blocker escalation. She doesn't sleep. You do.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="proof">
-    <div class="proof-inner">
-      <div class="section-header">
-        <span class="section-label">PROOF</span>
-        <h2>Real teams. Real velocity.</h2>
-      </div>
-      <div class="metrics">
-        <div class="metric">
-          <span class="metric-num">40%</span>
-          <span class="metric-label">Fewer stale tickets<br><small>closed or moved within 24 hours</small></span>
-        </div>
-        <div class="metric">
-          <span class="metric-num">6 hrs</span>
-          <span class="metric-label">Saved weekly per engineer<br><small>no more status hunting</small></span>
-        </div>
-        <div class="metric">
-          <span class="metric-num">3x</span>
-          <span class="metric-label">Faster blocker resolution<br><small>from 3 days to 4 hours</small></span>
-        </div>
-      </div>
-      <div class="testimonials">
+      <div class="testimonials-grid">
         <div class="testimonial">
-          <p>"Luna found 14 stale tickets we'd forgotten about. 3 of them were blocking feature work. We shipped 2 days early."</p>
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Luna found 14 stale tickets we'd forgotten about. 3 were blocking feature work. We shipped 2 days early."</p>
           <div class="testimonial-author">
             <span class="author-name">Sam Heyer</span>
             <span class="author-role">CEO, Engage The Crowd</span>
           </div>
         </div>
         <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
           <p>"I used to spend Sunday nights prepping for Monday standup. Luna does it by 9am. I got my Sundays back."</p>
           <div class="testimonial-author">
             <span class="author-name">Francisco Molina</span>
@@ -230,6 +162,7 @@
           </div>
         </div>
         <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
           <p>"Our stakeholders stopped asking 'what's the status?' because Luna's briefs actually answer the question."</p>
           <div class="testimonial-author">
             <span class="author-name">Dmitry Nedospasov</span>
@@ -240,11 +173,94 @@
     </div>
   </section>
 
+  <section class="how-it-works" id="how-it-works">
+    <div class="how-inner">
+      <div class="section-header">
+        <span class="section-label">HOW IT WORKS</span>
+        <h2>Hire your first AI Product Owner in 60 seconds</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Add her to Slack</h3>
+          <p>One-click from the Slack App Directory. No engineering. No setup. She joins your channels instantly.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Connect your tools</h3>
+          <p>OAuth with Linear, GitHub, and whatever you use. 5 minutes. She starts reading your backlog immediately.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>She runs product ops</h3>
+          <p>Daily standup briefs. Weekly sprint reports. Continuous backlog grooming. Blocker escalation. While you sleep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="roles" id="roles">
+    <div class="roles-inner">
+      <div class="section-header">
+        <span class="section-label">USE CASES</span>
+        <h2>What Luna owns for your team</h2>
+      </div>
+      <div class="roles-grid">
+        <div class="role">
+          <div class="role-icon">🚀</div>
+          <h3>Product Managers</h3>
+          <p>Stop being a Jira janitor. Luna grooms your backlog, writes acceptance criteria, and surfaces what actually needs your attention.</p>
+          <ul>
+            <li>Daily standup briefs delivered to Slack</li>
+            <li>RICE scoring and stale ticket detection</li>
+            <li>Sprint briefs with velocity and risk analysis</li>
+            <li>Stakeholder updates that get read</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="role-icon">⚙️</div>
+          <h3>Engineering Leads</h3>
+          <p>Know what's shipping, what's broken, and who's blocked — without chasing people in Slack.</p>
+          <ul>
+            <li>GitHub PR correlation with Linear tickets</li>
+            <li>CI status monitoring and failure alerts</li>
+            <li>Blocker detection and auto-escalation</li>
+            <li>Sprint health dashboards</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="role-icon">📈</div>
+          <h3>Founders & CEOs</h3>
+          <p>Get the product pulse without sitting in standups. Luna tells you what matters in 2 minutes.</p>
+          <ul>
+            <li>Weekly executive briefs with KPIs</li>
+            <li>Roadmap risk alerts before they become fires</li>
+            <li>Competitive intelligence and battlecards</li>
+            <li>Team velocity and capacity trends</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="role-icon">🎯</div>
+          <h3>Agencies & Consultancies</h3>
+          <p>One Luna per client. She keeps every project's backlog groomed, stakeholders informed, and sprints on track.</p>
+          <ul>
+            <li>Multi-workspace support</li>
+            <li>Per-client briefs and reporting</li>
+            <li>White-label sprint summaries</li>
+            <li>Team capacity planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="pricing" id="pricing">
     <div class="pricing-inner">
       <div class="section-header">
         <span class="section-label">PRICING</span>
-        <h2>Start free. Scale when you ship.</h2>
+        <h2>Start free. Pay when she saves you time.</h2>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card">
@@ -254,12 +270,12 @@
               <span class="price">$0</span>
               <span class="period">/month</span>
             </div>
-            <p>For solo PMs and small teams getting started</p>
+            <p>For solo PMs and small teams</p>
           </div>
           <ul class="pricing-features">
-            <li>1 workspace, 1 project</li>
+            <li>1 workspace</li>
             <li>Slack + Linear daily digests</li>
-            <li>Basic backlog grooming (50 tickets/week)</li>
+            <li>Basic backlog grooming</li>
             <li>Community support</li>
           </ul>
           <a href="#" class="btn btn-outline">Hire Luna — Free</a>
@@ -272,20 +288,20 @@
               <span class="price">$49</span>
               <span class="period">/user/mo</span>
             </div>
-            <p>For teams that want Luna to <em>run</em> product ops</p>
+            <p>For teams that ship every week</p>
           </div>
           <ul class="pricing-features">
-            <li>Unlimited workspaces & projects</li>
-            <li>GitHub integration + CI correlation</li>
-            <li>Auto-generated sprint briefs (PDF + Slack)</li>
-            <li>Competitive intelligence + battlecards</li>
-            <li>Custom skills (train Luna on your processes)</li>
-            <li>Priority support, 4-hour response</li>
+            <li>Unlimited workspaces</li>
+            <li>GitHub + CI integration</li>
+            <li>Auto-generated sprint briefs</li>
+            <li>Competitive intelligence</li>
+            <li>Custom skills</li>
+            <li>Priority support</li>
           </ul>
           <div class="pricing-quote">
-            "Luna saves our PM 6 hours a week. At $49/mo, she pays for herself in a day."
+            "Luna saves our PM 6 hours a week. She pays for herself in a day."
           </div>
-          <a href="#" class="btn btn-primary">Start Pro Trial — 14 Days Free</a>
+          <a href="#" class="btn btn-primary">Start 14-Day Free Trial</a>
         </div>
         <div class="pricing-card">
           <div class="pricing-header">
@@ -294,14 +310,14 @@
               <span class="price">Talk</span>
               <span class="period">to us</span>
             </div>
-            <p>For orgs that need Luna everywhere, securely</p>
+            <p>For orgs that need Luna everywhere</p>
           </div>
           <ul class="pricing-features">
-            <li>SSO/SAML, SCIM provisioning</li>
-            <li>Audit logs & compliance (SOC 2)</li>
-            <li>Custom adapters: Jira, Azure, Asana</li>
-            <li>Dedicated onboarding + training</li>
-            <li>99.9% SLA, dedicated support</li>
+            <li>SSO/SAML</li>
+            <li>Audit logs & SOC 2</li>
+            <li>Custom adapters (Jira, Azure, etc.)</li>
+            <li>Dedicated onboarding</li>
+            <li>99.9% SLA</li>
           </ul>
           <a href="#" class="btn btn-outline">Contact Sales</a>
         </div>
@@ -309,12 +325,47 @@
     </div>
   </section>
 
+  <section class="faq">
+    <div class="faq-inner">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2>Questions you probably have</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is Luna, exactly?</h3>
+          <p>Luna is an AI Product Owner that lives in Slack. She reads your Linear backlog, watches your GitHub repos, and posts daily briefs with what's blocked, what's ready, and what needs your attention. She also grooms your backlog, writes sprint briefs, and escalates blockers.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How is Luna different from ChatGPT or Copilot?</h3>
+          <p>ChatGPT answers questions. Luna does the work. She doesn't just tell you what's blocked — she posts it to Slack, suggests fixes, drafts escalation messages, and tracks until it's resolved. She doesn't summarize your meetings — she prevents the problems that make meetings necessary.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What tools does Luna connect to?</h3>
+          <p>Linear, Slack, and GitHub out of the box. Jira, Asana, Monday.com, and Azure DevOps on Pro and Enterprise. If your tool isn't supported, we build custom adapters.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is my data secure?</h3>
+          <p>Yes. Luna only reads the channels and repos you give her access to. Your data is encrypted in transit and at rest. We don't train on your data. SOC 2 Type II certified.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can Luna make mistakes?</h3>
+          <p>Luna is capable, not infallible. She double-checks her work and asks for confirmation before high-stakes actions like moving tickets to Done or escalating to executives. You stay in control.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I want to stop using Luna?</h3>
+          <p>Remove her from Slack. That's it. No lock-in, no data hostage. Your backlog stays in Linear, your repos stay in GitHub. Luna just stops posting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta" id="deploy">
     <div class="cta-inner">
-      <h2>Hire your Product Owner today</h2>
-      <p>One Slack invite. She starts Monday.</p>
-      <a href="#" class="btn btn-primary btn-large">Add Luna to Slack →</a>
-      <p class="cta-note">No credit card. She works free for 14 days. Cancel anytime.</p>
+      <h2>Your Product Owner starts Monday</h2>
+      <p>One Slack invite. No credit card. 14 days free.</p>
+      <a href="#" class="btn btn-primary btn-large">Add Luna to Slack — Free</a>
+      <p class="cta-note">Used by 200+ teams. No setup required. Cancel anytime.</p>
     </div>
   </section>
 
