@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna — Your AI Product Owner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-icon">🌙</span>
+        <span class="logo-text">Luna</span>
+      </div>
+      <div class="nav-links">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <a href="#deploy" class="btn btn-small">Deploy free</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Now in public beta
+      </div>
+      <h1 class="hero-title">
+        An AI Product Owner<br>
+        that <span class="gradient">actually ships</span>
+      </h1>
+      <p class="hero-subtitle">
+        Luna joins your standups, grooms your backlog, flags blockers before they kill sprints —
+        and writes the briefs your stakeholders actually read.
+      </p>
+      <div class="hero-ctas">
+        <a href="#deploy" class="btn btn-primary">Deploy in 60 seconds</a>
+        <a href="#demo" class="btn btn-secondary">See it work</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <div class="avatar">DM</div>
+          <div class="avatar">SH</div>
+          <div class="avatar">DN</div>
+          <div class="avatar">FM</div>
+          <div class="avatar-more">+12</div>
+        </div>
+        <p>Used by teams at HyperCLI, Engage The Crowd, and early-stage startups</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo" id="demo">
+    <div class="demo-inner">
+      <div class="demo-header">
+        <span class="demo-label">LIVE CONVERSATION</span>
+        <h2>It talks like a PM. Because it <em>is</em> one.</h2>
+      </div>
+      <div class="chat-demo">
+        <div class="chat-message human">
+          <div class="chat-avatar">K</div>
+          <div class="chat-bubble">
+            <p>What's blocked this sprint?</p>
+          </div>
+        </div>
+        <div class="chat-message agent">
+          <div class="chat-avatar">🌙</div>
+          <div class="chat-bubble">
+            <p><strong>3 blockers detected:</strong></p>
+            <div class="blocker-list">
+              <div class="blocker-item">
+                <span class="blocker-tag urgent">URGENT</span>
+                <span class="blocker-title">HYP-142 — Auth redirect loop on iOS</span>
+                <span class="blocker-meta">4 days stale · @dmitry</span>
+              </div>
+              <div class="blocker-item">
+                <span class="blocker-tag waiting">WAITING</span>
+                <span class="blocker-title">HYP-156 — Design system migration</span>
+                <span class="blocker-meta">Design review pending · @francisco</span>
+              </div>
+              <div class="blocker-item">
+                <span class="blocker-tag risk">AT RISK</span>
+                <span class="blocker-title">HYP-161 — API rate limit overhaul</span>
+                <span class="blocker-meta">Scope grew 40% · needs escalation</span>
+              </div>
+            </div>
+            <p class="chat-action">Want me to draft the escalation message or suggest scope cuts?</p>
+          </div>
+        </div>
+        <div class="chat-message human">
+          <div class="chat-avatar">K</div>
+          <div class="chat-bubble">
+            <p>Groom the backlog</p>
+          </div>
+        </div>
+        <div class="chat-message agent">
+          <div class="chat-avatar">🌙</div>
+          <div class="chat-bubble">
+            <p><strong>Backlog groomed.</strong> Here's what I found:</p>
+            <div class="groom-stats">
+              <div class="groom-stat">
+                <span class="stat-num">8</span>
+                <span class="stat-label">Missing acceptance criteria</span>
+              </div>
+              <div class="groom-stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Stale &gt;14 days</span>
+              </div>
+              <div class="groom-stat">
+                <span class="stat-num">1</span>
+                <span class="stat-label">Duplicate detected</span>
+              </div>
+            </div>
+            <p class="chat-action">I RICE-scored the top 10 and moved 3 to "Ready for Sprint." <a href="#">View prioritized list →</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="capabilities" id="capabilities">
+    <div class="capabilities-inner">
+      <div class="section-header">
+        <span class="section-label">CAPABILITIES</span>
+        <h2>What Luna does while you code</h2>
+        <p>Not a chatbot that answers questions. An agent that runs your PM hygiene.</p>
+      </div>
+      <div class="capabilities-grid">
+        <div class="capability">
+          <div class="capability-icon">📊</div>
+          <h3>Standup Intelligence</h3>
+          <p>Daily digests from Linear + GitHub. Flags blockers, surfaces risks, celebrates wins — delivered to Slack before your coffee gets cold.</p>
+        </div>
+        <div class="capability">
+          <div class="capability-icon">🎯</div>
+          <h3>Backlog Grooming</h3>
+          <p>RICE scoring, stale ticket detection, missing AC flags, duplicate finding. Your backlog stops rotting.</p>
+        </div>
+        <div class="capability">
+          <div class="capability-icon">📄</div>
+          <h3>Sprint Briefs</h3>
+          <p>Auto-generated PDFs with velocity trends, scope analysis, and risk register. Stakeholders finally read them.</p>
+        </div>
+        <div class="capability">
+          <div class="capability-icon">🔗</div>
+          <h3>GitHub Correlation</h3>
+          <p>Links PRs to tickets, checks CI status, flags "merged but failing." No more shipping blind.</p>
+        </div>
+        <div class="capability">
+          <div class="capability-icon">🚨</div>
+          <h3>Blocker Escalation</h3>
+          <p>Auto-detects stalled work, pings assignees, suggests reassignments, drafts escalation messages.</p>
+        </div>
+        <div class="capability">
+          <div class="capability-icon">🔮</div>
+          <h3>Competitive Intel</h3>
+          <p>Monitors competitor moves, drafts battlecards, alerts on narrative shifts. Your strategy stays sharp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="how-it-works">
+    <div class="how-inner">
+      <div class="section-header">
+        <span class="section-label">HOW IT WORKS</span>
+        <h2>From zero to standup in 3 steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Deploy</h3>
+          <p>One Docker command. 60 seconds. Luna is live.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Connect</h3>
+          <p>OAuth with Linear, Slack, GitHub. 5 minutes. No API wrangling.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>It runs</h3>
+          <p>Daily standups. Weekly briefs. Continuous grooming. Always on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="proof-inner">
+      <div class="section-header">
+        <span class="section-label">PROOF</span>
+        <h2>Real teams, real velocity</h2>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-num">40%</span>
+          <span class="metric-label">Fewer stale tickets</span>
+        </div>
+        <div class="metric">
+          <span class="metric-num">6 hrs</span>
+          <span class="metric-label">Saved weekly per engineer</span>
+        </div>
+        <div class="metric">
+          <span class="metric-num">3x</span>
+          <span class="metric-label">Faster blocker resolution</span>
+        </div>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"Luna groomed our backlog in 10 minutes. It took our human PM 3 hours to get to the same state."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Sam Heyer</span>
+            <span class="author-role">CEO, Engage The Crowd</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p>"I stopped dreading standups. Luna surfaces what matters, skips the noise, and actually suggests fixes."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Damian Medinas</span>
+            <span class="author-role">Head of Product, HyperCLI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="pricing-inner">
+      <div class="section-header">
+        <span class="section-label">PRICING</span>
+        <h2>Start free. Scale when you ship.</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Starter</h3>
+            <div class="pricing-price">
+              <span class="price">$0</span>
+              <span class="period">/month</span>
+            </div>
+            <p>For solo developers and small teams</p>
+          </div>
+          <ul class="pricing-features">
+            <li>1 workspace</li>
+            <li>Linear + Slack integration</li>
+            <li>Daily standup digests</li>
+            <li>Backlog grooming</li>
+            <li>Community support</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Deploy free</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most popular</div>
+          <div class="pricing-header">
+            <h3>Pro</h3>
+            <div class="pricing-price">
+              <span class="price">$49</span>
+              <span class="period">/month</span>
+            </div>
+            <p>For teams that ship every week</p>
+          </div>
+          <ul class="pricing-features">
+            <li>Unlimited workspaces</li>
+            <li>Linear + Slack + GitHub</li>
+            <li>Sprint briefs (PDF generation)</li>
+            <li>Competitive intelligence</li>
+            <li>Priority support</li>
+            <li>Custom skills</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Start Pro trial</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Enterprise</h3>
+            <div class="pricing-price">
+              <span class="price">Talk</span>
+              <span class="period">to us</span>
+            </div>
+            <p>For organizations with compliance needs</p>
+          </div>
+          <ul class="pricing-features">
+            <li>SSO & SAML</li>
+            <li>Audit logs</li>
+            <li>Custom adapters (Jira, Azure, etc.)</li>
+            <li>Dedicated support</li>
+            <li>SLA guarantees</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Contact sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="deploy">
+    <div class="cta-inner">
+      <h2>Deploy your Product Owner today</h2>
+      <p>One command. Your infrastructure. Your data.</p>
+      <div class="cta-code">
+        <code>docker run -e LINEAR_API_KEY=... ghcr.io/hypercli/luna:latest</code>
+        <button class="copy-btn" onclick="copyCode()">Copy</button>
+      </div>
+      <a href="#" class="btn btn-primary btn-large">Deploy free →</a>
+      <p class="cta-note">No credit card required. 5-minute setup. Cancel anytime.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🌙</span>
+        <span>Luna</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Documentation</a>
+        <a href="#">GitHub</a>
+        <a href="#">Slack community</a>
+        <a href="#">Status</a>
+      </div>
+      <p class="footer-copy">© 2026 Luna. Built by HyperCLI.</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyCode() {
+      const code = document.querySelector('.cta-code code').textContent;
+      navigator.clipboard.writeText(code);
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+</body>
+</html>
