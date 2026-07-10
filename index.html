@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luna — The AI Product Owner for teams that ship</title>
   <meta name="description" content="Luna joins your standups, grooms your backlog, flags blockers before they kill sprints — and writes the briefs your stakeholders actually read.">
+  <meta name="theme-color" content="#0a0a1a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="logo"><span class="logo-icon">🌙</span><span class="logo-text">luna</span></a>
+      <a href="#" class="logo"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span><span class="logo-text">luna</span></a>
       <div class="nav-links">
         <a href="#features">Why Luna</a>
         <a href="#comparison">Compare</a>
@@ -42,30 +43,150 @@
       </div>
       <div class="hero-visual">
         <div class="slack-preview">
-          <div class="slack-tabs">
-            <button class="slack-tab" data-tab="slack">Slack</button>
-            <button class="slack-tab active" data-tab="discord">Discord</button>
-          </div>
-          <div class="slack-window" id="slack-window">
-            <div class="slack-channel-bar"><span class="slack-hash">#</span> product-updates</div>
-            <div class="slack-message">
-              <div class="slack-avatar">👩‍💼</div>
-              <div class="slack-msg-content">
-                <div class="slack-msg-header"><span class="slack-name">Sarah Chen</span><span class="slack-time">8:45 AM</span></div>
-                <p>@Luna pull the sprint numbers and flag anything blocked</p>
+          <div class="slack-layout">
+            <div class="slack-sidebar">
+              <div class="slack-workspace">
+                <div class="workspace-avatar">L</div>
+                <span class="workspace-name">Luna Corp</span>
+                <span class="workspace-chevron">▼</span>
               </div>
+              <div class="slack-section-title">Channels</div>
+              <ul class="slack-channel-list">
+                <li class="active" data-channel="product-updates" onclick="switchChannel('product-updates')"><span class="ch-icon">#</span>product-updates</li>
+                <li data-channel="standups" onclick="switchChannel('standups')"><span class="ch-icon">#</span>standups</li>
+                <li data-channel="sprint-reports" onclick="switchChannel('sprint-reports')"><span class="ch-icon">#</span>sprint-reports<span class="ch-unread">1</span></li>
+                <li data-channel="blockers" onclick="switchChannel('blockers')"><span class="ch-icon">#</span>blockers</li>
+              </ul>
+              <div class="slack-section-title">Direct messages</div>
+              <ul class="slack-dm-list">
+                <li><span class="dm-avatar" style="background:#e11d48">SC</span><span class="dm-status"></span>Sarah Chen</li>
+                <li><span class="dm-avatar" style="background:#059669">JM</span><span class="dm-status"></span>Jake Miller</li>
+                <li><span class="dm-avatar" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)">🌙</span><span class="dm-status"></span>Luna</li>
+              </ul>
             </div>
-            <div class="slack-message">
-              <div class="slack-avatar luna">🌙</div>
-              <div class="slack-msg-content">
-                <div class="slack-msg-header"><span class="slack-name luna-name">Luna</span><span class="slack-app">App</span><span class="slack-time">8:46 AM</span></div>
-                <div class="slack-body">
-                  <p><strong>On it.</strong> Pulling from Linear, GitHub, and CI...</p>
-                  <div class="slack-apps">
-                    <span class="app-badge">📊 Linear</span>
-                    <span class="app-badge">🐙 GitHub</span>
-                    <span class="app-badge">🔄 CI</span>
+            <div class="slack-main">
+              <div class="slack-header">
+                <span class="slack-header-hash">#</span>
+                <span class="slack-header-channel" id="channel-name">product-updates</span>
+                <span class="slack-header-topic" id="channel-topic">Daily updates from the product team</span>
+              </div>
+              <div class="slack-messages" id="slack-messages">
+                <!-- Channel: product-updates (default) -->
+                <div class="channel-content active" data-content="product-updates">
+                  <div class="slack-message">
+                    <div class="msg-avatar" style="background:#e11d48">SC</div>
+                    <div class="msg-content">
+                      <div class="msg-header"><span class="msg-name">Sarah Chen</span><span class="msg-time">8:45 AM</span></div>
+                      <div class="msg-body"><p>@Luna pull the sprint numbers and flag anything blocked</p></div>
+                    </div>
                   </div>
+                  <div class="slack-message">
+                    <div class="msg-avatar luna">🌙</div>
+                    <div class="msg-content">
+                      <div class="msg-header"><span class="msg-name luna-name">Luna</span><span class="msg-app">App</span><span class="msg-time">8:46 AM</span></div>
+                      <div class="msg-body">
+                        <p><strong>On it.</strong> Pulling from Linear, GitHub, and CI...</p>
+                        <div class="msg-apps">
+                          <span class="msg-app-badge">📊 Linear</span>
+                          <span class="msg-app-badge">🐙 GitHub</span>
+                          <span class="msg-app-badge">🔄 CI</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slack-message">
+                    <div class="msg-avatar luna">🌙</div>
+                    <div class="msg-content">
+                      <div class="msg-header"><span class="msg-name luna-name">Luna</span><span class="msg-app">App</span><span class="msg-time">8:47 AM</span></div>
+                      <div class="msg-body">
+                        <p>Done. Here's the summary:</p>
+                        <p>• <strong>12 tickets</strong> in progress, <strong>3 blocked</strong><br>• Velocity trending <strong>+8%</strong> vs last sprint<br>• <strong>1 PR</strong> pending review &gt; 24h</p>
+                        <div class="msg-reactions">
+                          <span class="msg-reaction">👍 3</span>
+                          <span class="msg-reaction">🚀 2</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Channel: standups -->
+                <div class="channel-content" data-content="standups" style="display:none">
+                  <div class="slack-message">
+                    <div class="msg-avatar" style="background:#059669">JM</div>
+                    <div class="msg-content">
+                      <div class="msg-header"><span class="msg-name">Jake Miller</span><span class="msg-time">9:02 AM</span></div>
+                      <div class="msg-body"><p>Yesterday: finished auth refactor. Today: starting billing integration. Blockers: none.</p></div>
+                    </div>
+                  </div>
+                  <div class="slack-message">
+                    <div class="msg-avatar luna">🌙</div>
+                    <div class="msg-content">
+                      <div class="msg-header"><span class="msg-name luna-name">Luna</span><span class="msg-app">App</span><span class="msg-time">9:15 AM</span></div>
+                      <div class="msg-body">
+                        <p><strong>📋 Daily Standup Brief — July 10</strong></p>
+                        <p>• 8 updates collected<br>• 1 blocker flagged: API rate limits<br>• 2 PRs ready for review<br>• Sprint velocity: on track</p>
+                        <div class="msg-reactions">
+                          <span class="msg-reaction">✅ 5</span>
+                          <span class="msg-reaction">👀 2</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Channel: sprint-reports -->
+                <div class="channel-content" data-content="sprint-reports" style="display:none">
+                  <div class="slack-message">
+                    <div class="msg-avatar luna">🌙</div>
+                    <div class="msg-content">
+                      <div class="msg-header"><span class="msg-name luna-name">Luna</span><span class="msg-app">App</span><span class="msg-time">Mon 9:00 AM</span></div>
+                      <div class="msg-body">
+                        <p><strong>📊 Sprint 24 Report</strong></p>
+                        <p>Velocity: <strong>42 pts</strong> (+12% QoQ)<br>Completion: <strong>94%</strong><br>Blockers resolved: <strong>7</strong></p>
+                        <div class="msg-files">
+                          <div class="msg-file">
+                            <div class="msg-file-icon">📄</div>
+                            <div class="msg-file-info">
+                              <div class="msg-file-name">Sprint_24_Report.pdf</div>
+                              <div class="msg-file-meta">PDF • 2.4 MB</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="msg-reactions">
+                          <span class="msg-reaction">🎯 4</span>
+                          <span class="msg-reaction">📈 3</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Channel: blockers -->
+                <div class="channel-content" data-content="blockers" style="display:none">
+                  <div class="slack-message">
+                    <div class="msg-avatar luna">🌙</div>
+                    <div class="msg-content">
+                      <div class="msg-header"><span class="msg-name luna-name">Luna</span><span class="msg-app">App</span><span class="msg-time">10:23 AM</span></div>
+                      <div class="msg-body">
+                        <p>⚠️ <strong>Blocker detected</strong></p>
+                        <p>Ticket <strong>PROD-482</strong> stalled for 18h.<br>Owner: @Jake Miller<br>Status: Awaiting API key from DevOps</p>
+                        <div class="msg-body" style="margin-top:8px"><p>Should I draft an escalation to the platform team?</p></div>
+                        <div class="msg-reactions">
+                          <span class="msg-reaction">👍 Yes</span>
+                          <span class="msg-reaction">🚫 No</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slack-input">
+                <span class="slack-input-placeholder">Message #product-updates</span>
+                <div class="slack-input-icons">
+                  <span>📎</span>
+                  <span>@</span>
+                  <span>😊</span>
                 </div>
               </div>
             </div>
@@ -103,7 +224,7 @@
           <div class="feature-preview">
             <div class="mini-slack">
               <div class="mini-msg">
-                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-avatar">L</div>
                 <div class="mini-content">
                   <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
                   <p>Done. The brief's in the channel.</p>
@@ -120,7 +241,7 @@
           <div class="feature-preview">
             <div class="mini-slack">
               <div class="mini-msg">
-                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-avatar">L</div>
                 <div class="mini-content">
                   <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
                   <p>Pulled it from Linear, GitHub, and CI in one pass.</p>
@@ -137,7 +258,7 @@
           <div class="feature-preview">
             <div class="mini-slack">
               <div class="mini-msg">
-                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-avatar">L</div>
                 <div class="mini-content">
                   <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
                   <p>Posted your Monday brief. Same time next week.</p>
@@ -154,7 +275,7 @@
           <div class="feature-preview">
             <div class="mini-slack">
               <div class="mini-msg">
-                <div class="mini-avatar luna">🌙</div>
+                <div class="mini-avatar">L</div>
                 <div class="mini-content">
                   <div class="mini-header"><span class="mini-name">Luna</span><span class="mini-app">App</span></div>
                   <p>Used your usual format. I remembered.</p>
@@ -188,10 +309,10 @@
         <div class="comp-panel active" data-panel="standup">
           <div class="comp-col comp-them">
             <h4>The old way</h4>
-            <div class="comp-item"><div class="comp-logo">🤖</div><div class="comp-desc"><strong>ChatGPT</strong><span>Tells you how to run a standup</span></div></div>
-            <div class="comp-item"><div class="comp-logo">📋</div><div class="comp-desc"><strong>Notion AI</strong><span>Summarizes your notes</span></div></div>
-            <div class="comp-item"><div class="comp-logo">⚡</div><div class="comp-desc"><strong>Zapier</strong><span>Moves data between apps</span></div></div>
-            <div class="comp-item"><div class="comp-logo">💬</div><div class="comp-desc"><strong>Claude</strong><span>Drafts a message. You send it.</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>ChatGPT</strong><span>Tells you how to run a standup</span></div></div>
+            <div class="comp-item"><div class="comp-logo">N</div><div class="comp-desc"><strong>Notion AI</strong><span>Summarizes your notes</span></div></div>
+            <div class="comp-item"><div class="comp-logo">Z</div><div class="comp-desc"><strong>Zapier</strong><span>Moves data between apps</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>Claude</strong><span>Drafts a message. You send it.</span></div></div>
           </div>
           <div class="comp-vs">VS</div>
           <div class="comp-col comp-us">
@@ -205,10 +326,10 @@
         <div class="comp-panel" data-panel="grooming">
           <div class="comp-col comp-them">
             <h4>The old way</h4>
-            <div class="comp-item"><div class="comp-logo">🤖</div><div class="comp-desc"><strong>ChatGPT</strong><span>Suggests how to prioritize</span></div></div>
-            <div class="comp-item"><div class="comp-logo">📋</div><div class="comp-desc"><strong>Notion AI</strong><span>Organizes your docs</span></div></div>
-            <div class="comp-item"><div class="comp-logo">⚡</div><div class="comp-desc"><strong>Zapier</strong><span>Auto-moves tickets</span></div></div>
-            <div class="comp-item"><div class="comp-logo">💬</div><div class="comp-desc"><strong>Claude</strong><span>Writes descriptions</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>ChatGPT</strong><span>Suggests how to prioritize</span></div></div>
+            <div class="comp-item"><div class="comp-logo">N</div><div class="comp-desc"><strong>Notion AI</strong><span>Organizes your docs</span></div></div>
+            <div class="comp-item"><div class="comp-logo">Z</div><div class="comp-desc"><strong>Zapier</strong><span>Auto-moves tickets</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>Claude</strong><span>Writes descriptions</span></div></div>
           </div>
           <div class="comp-vs">VS</div>
           <div class="comp-col comp-us">
@@ -222,10 +343,10 @@
         <div class="comp-panel" data-panel="briefs">
           <div class="comp-col comp-them">
             <h4>The old way</h4>
-            <div class="comp-item"><div class="comp-logo">🤖</div><div class="comp-desc"><strong>ChatGPT</strong><span>Outlines what to include</span></div></div>
-            <div class="comp-item"><div class="comp-logo">📋</div><div class="comp-desc"><strong>Notion AI</strong><span>Summarizes your wiki</span></div></div>
-            <div class="comp-item"><div class="comp-logo">⚡</div><div class="comp-desc"><strong>Zapier</strong><span>Triggers a template</span></div></div>
-            <div class="comp-item"><div class="comp-logo">💬</div><div class="comp-desc"><strong>Claude</strong><span>Drafts paragraphs</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>ChatGPT</strong><span>Outlines what to include</span></div></div>
+            <div class="comp-item"><div class="comp-logo">N</div><div class="comp-desc"><strong>Notion AI</strong><span>Summarizes your wiki</span></div></div>
+            <div class="comp-item"><div class="comp-logo">Z</div><div class="comp-desc"><strong>Zapier</strong><span>Triggers a template</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>Claude</strong><span>Drafts paragraphs</span></div></div>
           </div>
           <div class="comp-vs">VS</div>
           <div class="comp-col comp-us">
@@ -239,10 +360,10 @@
         <div class="comp-panel" data-panel="escalation">
           <div class="comp-col comp-them">
             <h4>The old way</h4>
-            <div class="comp-item"><div class="comp-logo">🤖</div><div class="comp-desc"><strong>ChatGPT</strong><span>Suggests escalation steps</span></div></div>
-            <div class="comp-item"><div class="comp-logo">📋</div><div class="comp-desc"><strong>Notion AI</strong><span>Documents the issue</span></div></div>
-            <div class="comp-item"><div class="comp-logo">⚡</div><div class="comp-desc"><strong>Zapier</strong><span>Sends a notification</span></div></div>
-            <div class="comp-item"><div class="comp-logo">💬</div><div class="comp-desc"><strong>Claude</strong><span>Drafts the message</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>ChatGPT</strong><span>Suggests escalation steps</span></div></div>
+            <div class="comp-item"><div class="comp-logo">N</div><div class="comp-desc"><strong>Notion AI</strong><span>Documents the issue</span></div></div>
+            <div class="comp-item"><div class="comp-logo">Z</div><div class="comp-desc"><strong>Zapier</strong><span>Sends a notification</span></div></div>
+            <div class="comp-item"><div class="comp-logo">C</div><div class="comp-desc"><strong>Claude</strong><span>Drafts the message</span></div></div>
           </div>
           <div class="comp-vs">VS</div>
           <div class="comp-col comp-us">
@@ -311,17 +432,17 @@
         <div class="testimonial">
           <div class="testimonial-badge"><span class="saved-label">Saved:</span><span class="saved-time">6 hrs/week</span></div>
           <blockquote>"In less than a month, Luna became as irreplaceable to my team as my most tenured PM. She found 14 stale tickets we'd forgotten about."</blockquote>
-          <div class="testimonial-author"><div class="author-avatar">S</div><div class="author-info"><p class="author-name">Sam Heyer</p><p class="author-role">CEO, Engage The Crowd</p></div></div>
+          <div class="testimonial-author"><div class="author-avatar">SH</div><div class="author-info"><p class="author-name">Sam Heyer</p><p class="author-role">CEO, Engage The Crowd</p></div></div>
         </div>
         <div class="testimonial">
           <div class="testimonial-badge"><span class="saved-label">Saved:</span><span class="saved-time">3-5 hrs/week</span></div>
           <blockquote>"I used to spend Sunday nights prepping for Monday standup. Luna does it by 9am. I got my Sundays back."</blockquote>
-          <div class="testimonial-author"><div class="author-avatar">F</div><div class="author-info"><p class="author-name">Francisco Molina</p><p class="author-role">Engineering Lead, HyperCLI</p></div></div>
+          <div class="testimonial-author"><div class="author-avatar">FM</div><div class="author-info"><p class="author-name">Francisco Molina</p><p class="author-role">Engineering Lead, HyperCLI</p></div></div>
         </div>
         <div class="testimonial">
           <div class="testimonial-badge"><span class="saved-label">Saved:</span><span class="saved-time">10+ hrs/week</span></div>
           <blockquote>"Our stakeholders stopped asking 'what's the status?' because Luna's briefs actually answer the question."</blockquote>
-          <div class="testimonial-author"><div class="author-avatar">D</div><div class="author-info"><p class="author-name">Dmitry Nedospasov</p><p class="author-role">CTO, HyperCLI</p></div></div>
+          <div class="testimonial-author"><div class="author-avatar">DN</div><div class="author-info"><p class="author-name">Dmitry Nedospasov</p><p class="author-role">CTO, HyperCLI</p></div></div>
         </div>
       </div>
     </div>
@@ -329,11 +450,27 @@
 
   <section class="ask-ai">
     <div class="ask-ai-inner">
-      <div class="ask-ai-visual">
-        <div class="ai-orbit">
-          <div class="orbit-center">🌙</div>
-          <div class="orbit-ring ring-1">
-            <span class="orbit-icon">🤖</span><span class="orbit-icon">💬</span><span class="orbit-icon">🔍</span><span class="orbit-icon">✨</span>
+      <div class="ai-visual">
+        <div class="ai-grid">
+          <div class="ai-card">
+            <div class="ai-card-icon">🤖</div>
+            <div class="ai-card-name">ChatGPT</div>
+            <div class="ai-card-desc">Answers questions</div>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-icon">🔍</div>
+            <div class="ai-card-name">Perplexity</div>
+            <div class="ai-card-desc">Searches the web</div>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-icon">✨</div>
+            <div class="ai-card-name">Claude</div>
+            <div class="ai-card-desc">Writes and reasons</div>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-icon">🌙</div>
+            <div class="ai-card-name">Luna</div>
+            <div class="ai-card-desc">Does the work</div>
           </div>
         </div>
       </div>
@@ -456,7 +593,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-left">
-        <div class="footer-brand"><span class="logo-icon">🌙</span><span>luna</span></div>
+        <div class="footer-brand"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span><span>luna</span></div>
         <div class="footer-social">
           <a href="#" aria-label="Twitter">𝕏</a>
           <a href="#" aria-label="LinkedIn">in</a>
@@ -497,6 +634,7 @@
   </footer>
 
   <script>
+    // Carousel
     const items = document.querySelectorAll('.carousel-item');
     let current = 0;
     setInterval(() => {
@@ -505,6 +643,7 @@
       items[current].classList.add('active');
     }, 3000);
 
+    // Comparison tabs
     document.querySelectorAll('.comp-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         const target = tab.dataset.tab;
@@ -515,6 +654,43 @@
         });
       });
     });
+
+    // Slack channel switcher
+    function switchChannel(channel) {
+      // Update sidebar active state
+      document.querySelectorAll('.slack-channel-list li').forEach(li => {
+        li.classList.toggle('active', li.dataset.channel === channel);
+      });
+
+      // Update header
+      const names = {
+        'product-updates': 'product-updates',
+        'standups': 'standups',
+        'sprint-reports': 'sprint-reports',
+        'blockers': 'blockers'
+      };
+      const topics = {
+        'product-updates': 'Daily updates from the product team',
+        'standups': 'Async standups and daily briefs',
+        'sprint-reports': 'Weekly sprint summaries and reports',
+        'blockers': 'Blocked work and escalations'
+      };
+      document.getElementById('channel-name').textContent = names[channel];
+      document.getElementById('channel-topic').textContent = topics[channel];
+
+      // Update input placeholder
+      document.querySelector('.slack-input-placeholder').textContent = 'Message #' + names[channel];
+
+      // Switch messages with animation
+      const messagesContainer = document.getElementById('slack-messages');
+      messagesContainer.style.opacity = '0';
+      setTimeout(() => {
+        document.querySelectorAll('.channel-content').forEach(content => {
+          content.style.display = content.dataset.content === channel ? 'flex' : 'none';
+        });
+        messagesContainer.style.opacity = '1';
+      }, 150);
+    }
   </script>
 </body>
 </html>
